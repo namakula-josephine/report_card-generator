@@ -1,0 +1,30 @@
+<!-- backend/templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Report Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Student Report Card Generator</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label class="upload-label" for="file">Upload .xlsx file with marks</label>
+            <input type="file" name="file" id="file" accept=".xlsx">
+            <button type="submit">Generate Report Cards</button>
+        </form>
+
+        {% if reports %}
+        <div class="report-links">
+            <h2>Generated Reports</h2>
+            <ul>
+                {% for report in reports %}
+                    <li><a href="{{ url_for('download_file', filename=report) }}" target="_blank">📥 {{ report }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

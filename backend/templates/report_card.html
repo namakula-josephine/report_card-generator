@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Termly Report Card</title>
+    <link rel="stylesheet" href="../static/report_style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>{{ school_name }}</h1>
+        <p>Email: {{ school_email }}</p>
+        <p>Year: {{ year }} | Term: {{ term }}</p>
+    </div>
+
+    <div class="student-info">
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+        <p><strong>Class:</strong> {{ student.class }}</p>
+        <p><strong>Address:</strong> {{ student.address }}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Grade</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject, details in student.subjects.items() %}
+            <tr>
+                <td>{{ subject }}</td>
+                <td>{{ details.score }}</td>
+                <td>{{ details.grade }}</td>
+                <td>{{ details.performance }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="summary">
+                <td><strong>Total</strong></td>
+                <td colspan="3">{{ student.summary.total }}</td>
+            </tr>
+            <tr class="summary">
+                <td><strong>Average</strong></td>
+                <td colspan="3">{{ student.summary.average }} ({{ student.summary.grade }} - {{ student.summary.performance }})</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="comment">
+        <p><strong>Comment:</strong> {{ student.summary.comment }}</p>
+    </div>
+</body>
+</html>

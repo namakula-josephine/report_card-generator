@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #004080;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* backend/static/css/style.css */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f8fa;
+    padding: 40px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.report-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.report-links li {
+    margin: 10px 0;
+}
+
+.report-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
